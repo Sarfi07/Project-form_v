@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Form Validation</title>
+</head>
+<body>
+    <div id="content">
+        <section id="formSec">
+            <form id="registerForm" method="post">
+                <fieldset>
+                    <legend>Register</legend>
+
+                    <div id="emailDiv">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required placeholder="exampleName@example.com">
+                    </div>
+
+                    <div id="countryDiv">
+                        <label for="country">Country
+                        </label>
+                        <input type="text" id="country" name="country" autocomplete="off" list="countryList" required placeholder="Country Name" >
+                    </div>
+
+                    <div id="zipCodeDiv">
+                        <label for="zipCode">Zip Code</label>
+                        <input type="text" name="zipCode" id="zipCode" required pattern="(\d{6}([\-]\d{4})?)" placeholder="645731" title="Please enter a valid zip code, example: 785001">
+                    </div>
+
+                    <div id="passwordDiv">
+                        <label for="password1">Password</label>
+                        <input type="password" name="password1" id="password1" required placeholder="Type a new password">
+                    </div>
+
+                    <div id="password2Div">
+                        <label  for="password2">Confirm Password</label>
+                        <input type="password" name="password2" id="password2" required placeholder="Type again">
+                    </div>
+                </fieldset>
+
+                <button type="submit">Submit</button>
+                <button type="reset" class="resetBtn">Reset</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

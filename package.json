@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "start": "webpack serve --open",
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack serve --open --config webpack.dev.js",
     "refreshSite": "git subtree push --prefix dist origin gh-pages",
     "lint": "eslint ./src/*",
     "lint:fix": "eslint ./src/* --fix"
@@ -27,6 +27,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "country-list": "^2.3.0",
     "date-fns": "^2.30.0"
   }
 }
