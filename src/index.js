@@ -78,16 +78,18 @@ function validatePassword() {
     const password1 = document.getElementById('password1');
     const password2 = document.getElementById('password2');
 
-    password2.addEventListener('change', () => {
-        console.log(password1.value)
-        if (password1.value === password2.value && password1.value !== '') {
+
+    password2.addEventListener('input', () => {
+        console.log(password2.value);
+        if (password1.value === password2.value && password1 !== '' && password2 !== '') {
             password1.style.border = '2px solid green';
-            password2.style.border = '2px solid green';        
-        } else {
+            password2.style.border = '2px solid green';
+        }
+        else if (password1.value !== password2.value && password1 !== '' && password2 !== '') {
             password1.style.border = '2px solid red';
-            password1.setCustomValidity('Passwords Mismatched')
+            console.log('f2')
+            
             password2.style.border = '2px solid red';
-            password2.setCustomValidity('Password Mismatched')
         }
     })
 }
@@ -102,12 +104,20 @@ function submitForm() {
         if (confirmation) {
             const div = document.createElement('div');
             const formSec = document.getElementById('formSec');
-            const content = document.getElementById('content')
+            const content = document.getElementById('content');
+            const message = document.createElement('p');
+
+            message.setAttribute('id', 'submissonMessage');
+            message.style.textAlign = 'center';
+            message.style.fontSize = '2rem';
 
             formSec.style.display = 'none';
-            div.setAttribute('id', 'sent-message');
+            div.setAttribute('id', 'thumbsUp');
             div.textContent = '👍'
+            message.textContent = 'Form submitted successfully!'
+
             content.appendChild(div);
+            content.appendChild(message)
         }
     })
 }

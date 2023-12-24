@@ -25,17 +25,17 @@
 
                     <div id="zipCodeDiv">
                         <label for="zipCode">Zip Code</label>
-                        <input type="text" name="zipCode" id="zipCode" required pattern="(\d{6}([\-]\d{4})?)" placeholder="645731" title="Please enter a valid zip code, example: 785001">
+                        <input type="text" name="zipCode" id="zipCode" required pattern="(\d{6}([\-]\d{4})?)" placeholder="645731" title="Please enter a valid zip code, example: 785001" minlength="6" maxlength="6">
                     </div>
 
                     <div id="passwordDiv">
                         <label for="password1">Password</label>
-                        <input type="password" name="password1" id="password1" required placeholder="Type a new password">
+                        <input type="password" name="password1" id="password1" required placeholder="Type a new password" minlength="6">
                     </div>
 
                     <div id="password2Div">
                         <label  for="password2">Confirm Password</label>
-                        <input type="password" name="password2" id="password2" required placeholder="Type again">
+                        <input type="password" name="password2" id="password2" required placeholder="Type again" minlength="6">
                     </div>
                 </fieldset>
 
